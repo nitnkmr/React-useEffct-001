@@ -8,7 +8,6 @@ function App() {
   const apiLink="https://api.edamam.com/search?q=biryani&app_id=21cb9ebc&app_key=0f18b7f4a78a619ad78eb64c33c86bf8";
   const [search, setSearch] = useState("")
   const [data, setData] = useState([])
-  const [foodId, setfoodId] = useState(-1)
   const [getData, setGetData] = useState(false)
   const [validInput, setValidInput] = useState(false)
   const [checkDesc, setcheckDesc] = useState(false)
