@@ -1,36 +1,31 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
+// import React from 'react'
+// import { Link } from 'react-router-dom';
+// import { useState , useEffect} from 'react';
 
-function Description({foodId,data}) {
-    console.log(data);
-  return (
-    <div className='DescContainer'>
-        <h2>{data.hits[foodId].recipe.label}</h2>
-        <Link to={"/"}>
-            <div className='header'>X</div>
-        </Link>
-        <div className='description'>
-           {data.hits[foodId].recipe.ingredients.map((e,i)=>{
-            console.log(e);
-            return <div className='ingredients' key={i}>
-            <div className='list'>
-              <div>{i+1}</div>
-              <div>{e.text}</div>
-            </div>
+// function Description({foodId}) {
+//   const [data2,setData2]=useState([])
+  
+//   async function detailing(foodId){
+    
+//     const res=await fetch(`http://www.omdbapi.com/?i=${foodId}&apikey=d903b998`)
+//     console.log(res);
+//     const datas= await res.json();
+//     // setData2(datas)
+    
+//     // console.log(datas);
 
-          </div>
-           })}
-        </div>
-        <div className="summery">
-            <span>Refers to www.emamam.com for details :- </span>
-            <a href={data.hits[foodId].recipe.shareAs} target="_blank">
-            <button>Instructions</button>
+//   }
+//   useEffect(() => {
+//     detailing()
+   
+//   }, [data2]);
+    
+//   return (
+//     <div className='DescContainer'>
+       
 
-            </a>
-             </div>
+//     </div>
+//   )
+// }
 
-    </div>
-  )
-}
-
-export default Description
+// export default Description

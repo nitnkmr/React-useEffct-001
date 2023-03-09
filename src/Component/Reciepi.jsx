@@ -3,16 +3,16 @@ import Card from './Card'
 import { Route,Routes } from 'react-router-dom';
 import Description from './Description';
 
-const Reciepi = ({apiLink,data,seeMoreHandler,foodId,checkDesc}) => {
-  console.log(data);
+const Reciepi = ({checkDesc,seeMoreHandler,foodId,data}) => {
   return (
     
     <div className='container'>
-      <Routes>
-        <Route path='/SeeMore' element={checkDesc && <Description foodId={foodId} data={data}/>}/>
-     </Routes>
+    {/* <Routes>
+        <Route path='/SeeMore' element={checkDesc && <Description foodId={foodId}/>}/>
+     </Routes> */}
+      
      <div className="card1">
-          {data.hits.map((e,i)=><Card img={e.recipe.image} seeMoreHandler={seeMoreHandler} healthLabels={e.recipe.healthLabels} lable={e.recipe.label} key={i} id={i}/>)} 
+          {data.Search.map((e,i)=><Card key={i} id={i} data={e}/>)} 
         </div>
     </div>
   )

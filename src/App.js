@@ -21,18 +21,19 @@ function App() {
     fetching();
 
   }
-  function seeMoreHandler(id){
-    setfoodId(id)
-    setcheckDesc(true)
+  // function seeMoreHandler(){
+  //   setfoodId(1)
+  //   setcheckDesc(true)
+  //   console.log(id);
 
-  }
+  // }
 
   useEffect(() => {
     console.log(getData);
 
   }, [getData]);
   async function fetching(){
-    const res=await fetch(`https://api.edamam.com/search?q=${search}&app_id=21cb9ebc&app_key=0f18b7f4a78a619ad78eb64c33c86bf8`)
+    const res=await fetch(`https://www.omdbapi.com/?s=${search}&apikey=d903b998`)
     const data1=await res.json();
     await setData(data1)
     await setGetData1(true)
@@ -40,10 +41,11 @@ function App() {
   
   return (
     <div className="App">
-      <h1 style={{textAlign:"center"}}>Recipe Finder</h1>
+      <h1 style={{textAlign:"center"}}>Movie Finder</h1>
        <Inputs search={search} getRecs={getRecs} setSearch={setSearch} validInput={validInput} setValidInput={setValidInput}/>
-       {getData1 ? <Reciepi apiLink={apiLink} data={data} checkDesc={checkDesc} seeMoreHandler={seeMoreHandler} foodId={foodId} />:<h1 style={{textAlign:"center",color:"grey"}}>Search your meal here...</h1>
+       {getData1 ? <Reciepi data={data} checkDesc={checkDesc}  />:<h1 style={{textAlign:"center",color:"grey"}}>Search any Movie...</h1>
        }
+       
     </div>
   );
 }
